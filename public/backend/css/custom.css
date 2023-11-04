@@ -1,0 +1,12 @@
+.swal2-container.swal2-top-end.swal2-backdrop-show{
+    z-index: 10000 !important;
+}
+.float-left{
+    float: left !important;
+}
+.float-right{
+    float: right !important;
+}
+.w-100{
+    width: 100%;
+}
