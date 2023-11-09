@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Yajra\DataTables\Facades\DataTables;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\User\PersonalInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,16 @@ use App\Http\Controllers\testController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/test', [testController::class, 'index'])->name('users.index');
+Route::group(['as' => 'user.', 'middleware' => 'auth', 'prefix' => 'user/'], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Personal Information
+    Route::get('personal/information', [PersonalInfoController::class, 'index'])->name('personal.index');
+});
+
+
 

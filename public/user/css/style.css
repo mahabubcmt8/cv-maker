@@ -1,0 +1,17 @@
+.navbar{
+    background-color: #595959 !important;
+}
+.navbar .nav-item{
+    padding: 5px 10px;
+}
+.navbar .nav-item .active{
+    color: #f1c40f !important;
+}
+.navbar .nav-item i{
+    display: inline-block;
+}
+.navbar .nav-link{
+    font-weight: bold;
+    color: #fff !important;
+}
+
